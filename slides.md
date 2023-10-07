@@ -30,7 +30,7 @@ css: unocss
 Abdelrahman Madkour, Chris Martens, Steven Holtzen, Casper Harteveld, Stacy Marsella
 
 <div class="flex justify-center">
- <img src="imgs/posterqr.png" class="w-40 content-center" /> 
+ <img src="/imgs/posterqr.png" class="w-40 content-center" /> 
  </div>
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
@@ -41,7 +41,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 # Poster Pitch
 
 <div class="absolute top-0 right-0 h-35 w-30 ...">
-<img src="imgs/posterqr.png" class="content-center" /> 
+<img src="/imgs/posterqr.png" class="content-center" /> 
 </div>
 
 <v-clicks >
@@ -98,7 +98,7 @@ Also, HTML elements are valid:
 # The need for an explicitly Bayesian formulation of PCG
 
 <div class="absolute top-0 right-0 h-35 w-30 ...">
-<img src="imgs/posterqr.png" class="content-center" /> 
+<img src="/imgs/posterqr.png" class="content-center" /> 
 </div>
 
 <v-clicks class="rand">
@@ -119,7 +119,7 @@ layout: cover
 # A Bayesian formulation of PCG
 
 <div class="absolute top-0 right-0 h-35 w-30 ...">
-<img src="imgs/posterqr.png" class="content-center" /> 
+<img src="/imgs/posterqr.png" class="content-center" /> 
 </div>
 
 <!-- --- -->
@@ -200,7 +200,7 @@ layout: cover
 # Example: Adjusted $\Omega$
 
 <div class="absolute top-0 right-0 h-35 w-30 ...">
-<img src="imgs/posterqr.png" class="content-center" /> 
+<img src="/imgs/posterqr.png" class="content-center" /> 
 </div>
 
 
@@ -230,7 +230,7 @@ class: rand
 # Probabilistic Logic Programming
 
 <div class="absolute top-0 right-0 h-35 w-30 ...">
-<img src="imgs/posterqr.png" class="content-center" />
+<img src="/imgs/posterqr.png" class="content-center" />
 </div>
 
 
