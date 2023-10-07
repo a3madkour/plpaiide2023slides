@@ -1,0 +1,17 @@
+{
+  "name": "slidev",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.40.3",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-seriph": "*",
+    "bootstrap": "^5.2.3",
+    "vega-embed": "^6.22.1",
+    "vue3-slider": "^1.8.0"
+  }
+}

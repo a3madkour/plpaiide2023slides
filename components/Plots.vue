@@ -1,0 +1,150 @@
+<script setup lang="ts">
+ import {reactive, ref,watch, onMounted} from 'vue'
+ import grids from './grid'
+ import slider from 'vue3-slider'
+import embed  from 'vega-embed'
+ import ease_pref from "./ease_pref.json"
+ import control_pref from "./control_pref.json"
+
+// TODO show the task name when selected render it under the plots
+
+
+ const tasks = {
+	 "Task 0": "",
+	 "Task 1": "Alter the grammar such that it generates graphs of low leniency",
+	 "Task 2": "Alter the grammar such that it generates graphs of low mission linearity",
+	 "Task 3": "Alter the grammar such that it generates graphs of low map linearity",
+	 "Task 4": "Alter the grammar such that it generates graphs of low path redundancy",
+	 "Task 5": "Alter the grammar such that it generates graphs of high leniency and high",
+	 "Task 6": "Alter the grammar such that it generates graphs with few item rooms",
+	 "Task 7": "Alter the grammar such that it generates graphs where players have many rooms",
+ }
+
+const props = defineProps<{
+	 value?:bool
+ }>();
+var selected_task = reactive({value:"Task 0"})
+
+ var render_spec = (dict: any, legend: bool) =>
+	 {
+		 return {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+			 "width" : 350,
+			 "height" : 150,
+  "data": {
+    "values": dict["values"]
+  },
+    "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
+    },
+    {"name": "select", "select": "point"}
+  ],
+  "mark": "bar",
+  "encoding": {
+      "x": {"field": "category",
+      "axis": {"title": "Tasks"}
+	  },
+      "y": {"field": "value",
+      "axis": {"title": "Number of Particpants"},
+			"type": "quantitative"},
+    "xOffset": {"field": "group"},
+    "color": {"field": "group", "legend": legend},
+    "fillOpacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 2
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 1}
+      ],
+      "value": 0
+    }
+  },
+} 
+	 }
+
+ 
+
+ onMounted(() => {
+
+	 embed('#ease', render_spec(ease_pref, false)).then(result => {
+    result.view.addEventListener('click', function(event, item) {
+		if(item){
+		if (item.datum){
+			const new_cat = item.datum.category
+			var new_v = {value: tasks[new_cat]}
+			      Object.assign(selected_task, new_v)
+			console.log("mosem el tot")
+		}
+		}else{
+		}
+    });
+}).catch(console.warn);
+	 embed('#control', render_spec(control_pref , true)).then(result => {
+    result.view.addEventListener('click', function(event, item) {
+		if(item){
+		if (item.datum){
+			const new_cat = item.datum.category
+			var new_v = {value: tasks[new_cat]}
+			      Object.assign(selected_task, new_v)
+			console.log("mosem el tot")
+		}
+			// selected_task = item.datum["category"]
+		}else{
+		}
+    });
+}).catch(console.warn);
+
+	 // var path = grids.findShortestPath(all_grids[12])
+	 // console.log(grids.numDegrees(all_grids[13]))
+ });
+
+</script>
+<template>
+		<div>
+	<h2 style="font-size:15pt">
+		Task: {{selected_task.value}}
+	</h2>
+	</div>
+	<div class="grid">
+		<div class="container">
+			<div id="ease"></div>
+			<h1>Ease of use</h1>
+		</div>
+		<div class="container">
+			<div id="control"></div>
+			<h1>Perception of control </h1>
+		</div>
+	</div>
+	<div>
+
+	</div>
+
+</template>
+
+<style scoped>
+.grid{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+
+}
+
+ .container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+ }
+</style>

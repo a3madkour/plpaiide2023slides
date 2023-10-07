@@ -1,0 +1,40 @@
+<script setup lang="ts">
+ import {reactive, ref,watch, onMounted} from 'vue'
+ import grids from './grid'
+ import slider from 'vue3-slider'
+
+
+
+ const all_grids = grids.generateAllGrids()
+
+const props = defineProps<{
+  grid_num: number
+	 size: number
+	 value?:bool
+ }>();
+ var selected_grids = reactive(all_grids)
+ var grid = selected_grids[props.grid_num]
+ onMounted(() => {
+
+	 // var path = grids.findShortestPath(all_grids[12])
+	 // console.log(grids.numDegrees(all_grids[13]))
+	 // console.log(grids.numDegrees)
+ });
+
+
+</script>
+<template>
+	<div v-if=!value class="grid" v-html="grids.renderGrid(grid, props.size)"> </div>
+	<div v-if=value class="grid" v-html="grids.renderNumGrid(grid, props.size)"> </div>
+	<!-- <div v-html="grids.renderTable(all_grids)"></div> -->
+</template>
+
+<style scoped>
+.grid{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+
+}
+</style>

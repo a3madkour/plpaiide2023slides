@@ -1,0 +1,22 @@
+{
+  "name": "slidev",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.40.3",
+    "@slidev/theme-apple-basic": "^0.20.0",
+    "@slidev/theme-bricks": "^0.0.2",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-seriph": "*",
+    "bootstrap": "^5.2.3",
+    "katex": "^0.16.7",
+    "slidev-theme-academic": "^1.1.3",
+    "slidev-theme-unicorn": "^1.1.1",
+    "vega-embed": "^6.22.1",
+    "vue3-slider": "^1.8.0"
+  }
+}
