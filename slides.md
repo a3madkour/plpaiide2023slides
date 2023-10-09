@@ -106,9 +106,10 @@ Also, HTML elements are valid:
 - Goal: Authorial tools for defining content generators
 - We argue that randomness is important to defining a diverse content generator
 - Approach: Leverage existing mathematical formulations of randomness to come up with tools that makes reasoning about randomness of generators clearer
+- We can also allow us to make use of both authorship-focused frameworks (e.g. grammars and declarative logic semantics) and data-driven approaches
 - Many many existing methods of modeling randomness are Bayesian
   - See *Probability Theory: The Logic of Science*  by E.T. Jaynes and G. Larry Bretthorst
-  - A derivation of Bayes' rule on desiderata on logic under uncertainty
+  - A derivation of Bayes' rule based on desiderata on logic under uncertainty
 
 </v-clicks>
 
