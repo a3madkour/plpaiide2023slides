@@ -106,22 +106,13 @@ Also, HTML elements are valid:
 - Goal: Authorial tools for defining content generators
 - We argue that randomness is important to defining a diverse content generator
 - Approach: Leverage existing mathematical formulations of randomness to come up with tools that makes reasoning about randomness of generators clearer
-- We can also allow us to make use of both authorship-focused frameworks (e.g. grammars and declarative logic semantics) and data-driven approaches
+- We can also make use of both authorship-focused frameworks (e.g. grammars and declarative logic semantics) and data-driven approaches
 - Many many existing methods of modeling randomness are Bayesian
   - See *Probability Theory: The Logic of Science*  by E.T. Jaynes and G. Larry Bretthorst
   - A derivation of Bayes' rule based on desiderata on logic under uncertainty
 
 </v-clicks>
 
----
-layout: cover
----
-
-# A Bayesian formulation of PCG
-
-<div class="absolute top-0 right-0 h-35 w-30 ...">
-<img src="/imgs/posterqr.png" class="content-center" /> 
-</div>
 
 <!-- --- -->
 
@@ -198,7 +189,7 @@ layout: cover
 
 <!-- --- -->
 
-# Example: Adjusted $\Omega$
+# An example of our Bayesian formulation of PCG
 
 <div class="absolute top-0 right-0 h-35 w-30 ...">
 <img src="/imgs/posterqr.png" class="content-center" /> 
