@@ -49,6 +49,7 @@ var validty = (e: any) => {
 };
 
 var quality1 = (e: any) => {
+  validty(e);
   var valid_indices = [];
   for (var i = 0; i < selected_grids.length; i++) {
     if (selected_grids[i].valid == grids.DisplayMode.Invalid) {
